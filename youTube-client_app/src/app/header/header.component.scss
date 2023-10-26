@@ -1,6 +1,6 @@
 header {
   display: flex;
-  // flex-direction: row;
+  // background-color: rgba(0, 0, 255, 0.289);
   align-items: center;
   width: 100%;
   max-width: 1440px;
@@ -16,8 +16,9 @@ header {
 
   input {
     background-color: rgba(239, 239, 239, 1);
-    width: 396px;
+    width: 391px;
     height: 24px;
+    padding-left: 5px;
   }
 
   .search-btn {
