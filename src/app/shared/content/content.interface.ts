@@ -38,8 +38,8 @@ export interface Content {
     commentCount: string;
   };
 }
-type Thumbnail = {
+interface Thumbnail {
   url: string;
   width: number;
   height: number;
-};
+}

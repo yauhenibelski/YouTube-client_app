@@ -1,3 +1,32 @@
+$max-card-width: 250px;
+
 :host {
-  display: block;
+  display: flex;
+  max-width: $max-card-width;
+  margin: 5px;
+  cursor: pointer;
+
+  mat-card-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  [mat-card-image] {
+    width: 100%;
+  }
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+}
+
+.icon-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
 }

@@ -1,1 +1,28 @@
-<p>card works!</p>
+<mat-card>
+  <img
+    mat-card-image
+    [src]="content?.snippet?.thumbnails?.medium?.url"
+    [alt]="content?.snippet?.title"
+  />
+  <div class="statistics">
+    <div class="icon-wrap">
+      <mat-icon>visibility</mat-icon>
+      {{ content?.statistics?.viewCount }}
+    </div>
+    <div class="icon-wrap">
+      <mat-icon>favorite</mat-icon>
+      {{ content?.statistics?.likeCount }}
+    </div>
+    <div class="icon-wrap">
+      <mat-icon>heart_broken</mat-icon>
+      {{ content?.statistics?.dislikeCount }}
+    </div>
+    <div class="icon-wrap">
+      <mat-icon>chat</mat-icon>
+      {{ content?.statistics?.commentCount }}
+    </div>
+  </div>
+  <mat-card-content>
+    {{ content?.snippet?.title }}
+  </mat-card-content>
+</mat-card>
