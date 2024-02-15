@@ -3,13 +3,13 @@ import { CardComponent } from './card/card.component';
 import { content } from '../../shared/content/content.mock';
 
 @Component({
-  selector: 'app-youtube-list',
+  selector: 'app-youtube-content-list',
   standalone: true,
   imports: [CardComponent],
-  templateUrl: './youtube-list.component.html',
-  styleUrl: './youtube-list.component.scss',
+  templateUrl: './youtube-content-list.component.html',
+  styleUrl: './youtube-content-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class YoutubeListComponent {
+export class YoutubeContentListComponent {
   readonly youTubeContent = content;
 }
