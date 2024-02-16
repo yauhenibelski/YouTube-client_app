@@ -1,9 +1,10 @@
-<mat-toolbar>
+<mat-toolbar color="">
   <div class="btn-container">
     <div class="search-wrap">
       <button mat-mini-fab color="basic">
         <mat-icon>play_arrow</mat-icon>
       </button>
+
       <mat-form-field class="form-field">
         <mat-label>Search</mat-label>
         <input matInput type="text" />
@@ -11,7 +12,7 @@
 
       <button mat-raised-button>search</button>
 
-      <button mat-mini-fab color="basic">
+      <button mat-mini-fab color="basic" (click)="filterBlock.showBlock()">
         <mat-icon>tune</mat-icon>
       </button>
     </div>
@@ -22,4 +23,4 @@
   </div>
 </mat-toolbar>
 
-<app-sorting-block></app-sorting-block>
+<app-filter-block #filterBlock></app-filter-block>

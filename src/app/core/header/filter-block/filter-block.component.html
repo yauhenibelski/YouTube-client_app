@@ -1,0 +1,20 @@
+<mat-toolbar [class.active]="isShowBlock">
+  <div class="filter-wrap">
+    <span>Sorting by:</span>
+
+    <div class="btn-wrap">
+      <span class="text">date</span>
+      <mat-icon [fontIcon]="'arrow_drop_down'"></mat-icon>
+    </div>
+
+    <div class="btn-wrap">
+      <span class="text">count of views</span>
+      <mat-icon [fontIcon]="'arrow_drop_down'"></mat-icon>
+    </div>
+
+    <div class="filter-by-word-wrap">
+      <span class="text">word or sentence</span>
+      <input type="text" placeholder="word..." />
+    </div>
+  </div>
+</mat-toolbar>

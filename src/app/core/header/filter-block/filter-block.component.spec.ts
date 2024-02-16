@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SortingBlockComponent } from './sorting-block.component';
+import { FilterBlockComponent } from './filter-block.component';
 
-describe('SortingBlockComponent', () => {
-  let component: SortingBlockComponent;
-  let fixture: ComponentFixture<SortingBlockComponent>;
+describe('FilterBlockComponent', () => {
+  let component: FilterBlockComponent;
+  let fixture: ComponentFixture<FilterBlockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SortingBlockComponent],
+      imports: [FilterBlockComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SortingBlockComponent);
+    fixture = TestBed.createComponent(FilterBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

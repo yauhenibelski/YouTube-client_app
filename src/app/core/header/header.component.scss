@@ -19,7 +19,12 @@
   align-items: center;
   justify-content: center;
   max-width: 1440px;
+  margin: auto;
   width: 100%;
+}
+
+mat-toolbar {
+  height: auto;
 }
 
 .search-wrap {
@@ -27,10 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  mat-form-field {
-    margin-top: 15px;
-  }
 
   & * {
     margin: 0 5px;

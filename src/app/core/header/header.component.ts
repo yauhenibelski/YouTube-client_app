@@ -5,13 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SortingBlockComponent } from './sorting-block/sorting-block.component';
+import { FilterBlockComponent } from './filter-block/filter-block.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    SortingBlockComponent,
+    FilterBlockComponent,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
