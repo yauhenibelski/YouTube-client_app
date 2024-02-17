@@ -3,18 +3,18 @@
     <span>Sorting by:</span>
 
     <div class="btn-wrap">
-      <span class="text">date</span>
-      <mat-icon [fontIcon]="'arrow_drop_down'"></mat-icon>
+      <span class="text" (click)="changeFilterValue(date, 'date')">date</span>
+      <mat-icon #date></mat-icon>
     </div>
 
     <div class="btn-wrap">
-      <span class="text">count of views</span>
-      <mat-icon [fontIcon]="'arrow_drop_down'"></mat-icon>
+      <span class="text" (click)="changeFilterValue(views, 'views')">count of views</span>
+      <mat-icon #views></mat-icon>
     </div>
 
     <div class="filter-by-word-wrap">
       <span class="text">word or sentence</span>
-      <input type="text" placeholder="word..." />
+      <input type="text" placeholder=". . ." />
     </div>
   </div>
 </mat-toolbar>
