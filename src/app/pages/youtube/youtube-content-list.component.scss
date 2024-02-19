@@ -1,4 +1,7 @@
 :host {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  max-width: 1400px;
+  margin: auto;
+  padding: 10px;
 }

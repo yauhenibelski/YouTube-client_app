@@ -20,7 +20,7 @@ import { IconName } from './icon-name.enum';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterBlockComponent {
-  @ViewChildren(MatIcon) icons: QueryList<MatIcon> | null = null;
+  @ViewChildren(MatIcon) private icons: QueryList<MatIcon> | null = null;
 
   constructor(private changeDetector: ChangeDetectorRef) {}
 

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [appPaintBorderBottom]="content && content.snippet.publishedAt">
   <img
     mat-card-image
     [src]="content?.snippet?.thumbnails?.medium?.url"

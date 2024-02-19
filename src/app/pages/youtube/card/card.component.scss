@@ -1,20 +1,22 @@
-$max-card-width: 250px;
-
 :host {
   display: flex;
-  max-width: $max-card-width;
-  margin: 5px;
   cursor: pointer;
+}
 
-  mat-card-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-  }
+mat-card {
+  margin: 5px;
+  border-bottom: solid 3px;
+  width: 100%;
+}
 
-  [mat-card-image] {
-    width: 100%;
-  }
+[mat-card-image] {
+  width: 100%;
+}
+
+mat-card-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .statistics {
