@@ -1,1 +1,4 @@
-<app-card *ngFor="let content of youTubeContent; trackBy: trackById" [content]="content"></app-card>
+<app-card
+    *ngFor="let content of youTubeContent$ | async; trackBy: trackById"
+    [content]="content"
+></app-card>
