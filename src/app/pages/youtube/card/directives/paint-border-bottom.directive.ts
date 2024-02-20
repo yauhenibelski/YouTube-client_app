@@ -8,11 +8,7 @@ import { getColorByTime } from './utils/get-color-by-time';
 export class PaintBorderBottomDirective {
   @Input({ required: true }) set appPaintBorderBottom(publishedData: string | null) {
     if (publishedData) {
-      this.renderer.setStyle(
-        this.element.nativeElement,
-        'border-bottom-color',
-        getColorByTime(publishedData),
-      );
+      this.renderer.addClass(this.element.nativeElement, getColorByTime(publishedData));
     }
   }
 

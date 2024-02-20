@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Content } from '../../../shared/content/content.interface';
 import { PaintBorderBottomDirective } from './directives/paint-border-bottom.directive';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatProgressBarModule, PaintBorderBottomDirective],
+  imports: [MatCardModule, MatIconModule, PaintBorderBottomDirective],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
