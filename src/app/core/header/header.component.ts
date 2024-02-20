@@ -8,19 +8,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FilterBlockComponent } from './filter-block/filter-block.component';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [
-    FilterBlockComponent,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-header',
+    standalone: true,
+    imports: [
+        FilterBlockComponent,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        FormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {}

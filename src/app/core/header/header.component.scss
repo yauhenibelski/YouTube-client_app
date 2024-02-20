@@ -1,35 +1,35 @@
 :host {
-  mat-label {
-    color: black;
-  }
+    mat-label {
+        color: black;
+    }
 
-  mat-form-field {
-    --mdc-filled-text-field-focus-active-indicator-color: rgb(62, 62, 62);
-    --mdc-filled-text-field-container-color: transparent;
-    --mat-form-field-hover-state-layer-opacity: 0;
-    --mat-form-field-focus-state-layer-opacity: 0;
-  }
+    mat-form-field {
+        --mdc-filled-text-field-focus-active-indicator-color: rgb(62, 62, 62);
+        --mdc-filled-text-field-container-color: transparent;
+        --mat-form-field-hover-state-layer-opacity: 0;
+        --mat-form-field-focus-state-layer-opacity: 0;
+    }
 }
 .btn-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 1440px;
-  margin: auto;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
 }
 
 mat-toolbar {
-  height: auto;
+    height: auto;
 }
 
 .search-wrap {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  & * {
-    margin: 0 5px;
-  }
+    & * {
+        margin: 0 5px;
+    }
 }

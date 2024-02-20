@@ -1,25 +1,25 @@
 <mat-toolbar>
-  <div class="btn-container">
-    <div class="search-wrap">
-      <button mat-mini-fab color="basic">
-        <mat-icon>play_arrow</mat-icon>
-      </button>
-      <mat-form-field>
-        <mat-label>Search</mat-label>
-        <input matInput type="text" />
-      </mat-form-field>
+    <div class="btn-container">
+        <div class="search-wrap">
+            <button mat-mini-fab color="basic">
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+            <mat-form-field>
+                <mat-label>Search</mat-label>
+                <input matInput type="text" />
+            </mat-form-field>
 
-      <button mat-raised-button>search</button>
+            <button mat-raised-button>search</button>
 
-      <button mat-mini-fab color="basic" (click)="filterBlock.showBlock()">
-        <mat-icon>tune</mat-icon>
-      </button>
+            <button mat-mini-fab color="basic" (click)="filterBlock.showBlock()">
+                <mat-icon>tune</mat-icon>
+            </button>
+        </div>
+
+        <button mat-mini-fab color="basic" class="profile">
+            <mat-icon>account_circle</mat-icon>
+        </button>
     </div>
-
-    <button mat-mini-fab color="basic" class="profile">
-      <mat-icon>account_circle</mat-icon>
-    </button>
-  </div>
 </mat-toolbar>
 
 <app-filter-block #filterBlock></app-filter-block>
