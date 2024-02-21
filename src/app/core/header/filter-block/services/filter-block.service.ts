@@ -6,14 +6,14 @@ import { Filter } from '../filter-value.interface';
     providedIn: 'root',
 })
 export class FilterBlockService {
-    private value$ = new BehaviorSubject<Filter>({ value: '', direction: '', word: '' });
+    private filterOptions$ = new BehaviorSubject<Filter>({ value: '', direction: '', word: '' });
 
-    set value(value: Partial<Filter>) {
-        const newVal = { ...this.value$.value, ...value };
-        this.value$.next(newVal);
+    set options(newOptions: Partial<Filter>) {
+        const newVal = { ...this.filterOptions$.value, ...newOptions };
+        this.filterOptions$.next(newVal);
     }
 
-    get value(): Observable<Filter> {
-        return this.value$.asObservable();
+    get options$(): Observable<Filter> {
+        return this.filterOptions$.asObservable();
     }
 }

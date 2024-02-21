@@ -17,7 +17,7 @@ import { FilterBlockService } from '../../core/header/filter-block/services/filt
 export class YoutubeContentListComponent implements OnInit {
     readonly youTubeContent$ = this.contentStoreService.content$;
 
-    readonly filterValue$ = this.filterService.value;
+    readonly filterValue$ = this.filterService.options$;
 
     constructor(
         private contentStoreService: ContentStoreService,

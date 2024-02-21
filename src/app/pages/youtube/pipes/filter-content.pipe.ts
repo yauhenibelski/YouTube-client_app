@@ -10,6 +10,12 @@ export class FilterContentPipe implements PipeTransform {
     transform(content: Content[] | null, filter: Filter | null): Content[] | null {
         let sorted = content ? [...content] : [];
 
+        if (filter?.word) {
+            sorted = sorted.filter((c: Content) =>
+                c.snippet.title.toLowerCase().includes(filter.word.toLocaleLowerCase()),
+            );
+        }
+
         if (filter?.value) {
             const sortByIncrease = (a: Content, b: Content) => {
                 return filter.value === 'date'
@@ -31,13 +37,6 @@ export class FilterContentPipe implements PipeTransform {
             }
         }
 
-        if (filter?.word) {
-            sorted = sorted.filter((c: Content) =>
-                c.snippet.title.toLowerCase().includes(filter.word.toLocaleLowerCase()),
-            );
-            return sorted;
-        }
-
-        return content;
+        return content ? sorted : content;
     }
 }

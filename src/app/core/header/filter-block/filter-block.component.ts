@@ -44,7 +44,7 @@ export class FilterBlockComponent {
                 if (icon !== currentIcon) icon.fontIcon = IconName.empty;
             });
 
-            this.filterService.value = {
+            this.filterService.options = {
                 direction,
                 value: direction ? filterBy : '',
             };
@@ -54,7 +54,7 @@ export class FilterBlockComponent {
     changeFilterValueByWord(event: Event) {
         const input = event.target as HTMLInputElement;
 
-        this.filterService.value = {
+        this.filterService.options = {
             word: input.value,
         };
     }
