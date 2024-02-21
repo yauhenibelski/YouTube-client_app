@@ -1,4 +1,0 @@
-{
-  "*.{js,ts,html}": ["npm run prettier:fix:all", "npx eslint --fix"],
-  "*.{scss,json}": ["npm run prettier:fix:all"]
-}
