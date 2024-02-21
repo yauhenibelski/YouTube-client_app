@@ -10,6 +10,9 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { getNextIconName } from './utils/get-next-icon-name';
 import { IconName } from './icon-name.enum';
+import { FilterBlockService } from './services/filter-block.service';
+import { Filter } from './filter-value.interface';
+import { getDirection } from './utils/get-direction';
 
 @Component({
     selector: 'app-filter-block',
@@ -22,22 +25,38 @@ import { IconName } from './icon-name.enum';
 export class FilterBlockComponent {
     @ViewChildren(MatIcon) private icons: QueryList<MatIcon> | null = null;
 
-    constructor(private changeDetector: ChangeDetectorRef) {}
+    constructor(
+        private changeDetector: ChangeDetectorRef,
+        public filterService: FilterBlockService,
+    ) {}
 
     isShowBlock = false;
 
-    changeFilterValue(currentIcon: MatIcon, filterBy: 'date' | 'views'): void {
+    changeFilterValueByDirection(currentIcon: MatIcon, filterBy: Filter['value']): void {
         if (this.icons) {
             const icons = this.icons.toArray();
-            currentIcon.fontIcon = getNextIconName(currentIcon.fontIcon);
+            const nextIconName = getNextIconName(currentIcon.fontIcon);
+            const direction = getDirection(nextIconName);
+
+            currentIcon.fontIcon = nextIconName;
 
             icons.forEach(icon => {
                 if (icon !== currentIcon) icon.fontIcon = IconName.empty;
             });
-        }
 
-        // TODO: change filter value
-        console.log(filterBy);
+            this.filterService.value = {
+                direction,
+                value: direction ? filterBy : '',
+            };
+        }
+    }
+
+    changeFilterValueByWord(event: Event) {
+        const input = event.target as HTMLInputElement;
+
+        this.filterService.value = {
+            word: input.value,
+        };
     }
 
     showBlock(): void {

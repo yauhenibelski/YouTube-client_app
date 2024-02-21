@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { Content } from '../../shared/content/content.interface';
 import { ContentStoreService } from '../../shared/content/content-store.service';
+import { FilterContentPipe } from './pipes/filter-content.pipe';
+import { FilterBlockService } from '../../core/header/filter-block/services/filter-block.service';
 
 @Component({
     selector: 'app-youtube-content-list',
     standalone: true,
-    imports: [CardComponent, CommonModule],
+    imports: [CardComponent, CommonModule, FilterContentPipe],
     templateUrl: './youtube-content-list.component.html',
     styleUrl: './youtube-content-list.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,13 +17,17 @@ import { ContentStoreService } from '../../shared/content/content-store.service'
 export class YoutubeContentListComponent implements OnInit {
     readonly youTubeContent$ = this.contentStoreService.content$;
 
-    constructor(private contentStoreService: ContentStoreService) {}
+    readonly filterValue$ = this.filterService.value;
+
+    constructor(
+        private contentStoreService: ContentStoreService,
+        private filterService: FilterBlockService,
+    ) {}
 
     ngOnInit(): void {
         this.contentStoreService.loadContent();
     }
 
-    // eslint-disable-next-line class-methods-use-this
     trackById(_: number, content: Content): Content['id'] {
         return content.id;
     }

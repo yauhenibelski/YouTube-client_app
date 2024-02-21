@@ -1,4 +1,7 @@
 <app-card
-    *ngFor="let content of youTubeContent$ | async; trackBy: trackById"
+    *ngFor="
+        let content of youTubeContent$ | async | filterContent: (filterValue$ | async);
+        trackBy: trackById
+    "
     [content]="content"
 ></app-card>
