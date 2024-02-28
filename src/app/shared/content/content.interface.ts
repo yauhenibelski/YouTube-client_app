@@ -2,44 +2,45 @@ export interface Content {
     kind: string;
     etag: string;
     id: string;
-    snippet: {
-        publishedAt: string;
-        channelId: string;
-        title: string;
-        description: string;
-
-        thumbnails: {
-            default: Thumbnail;
-            medium: Thumbnail;
-            high: Thumbnail;
-            standard: Thumbnail;
-            maxres: Thumbnail;
-        };
-
-        channelTitle: string;
-        tags: string[];
-        categoryId: string;
-        liveBroadcastContent: string;
-        defaultLanguage?: string;
-
-        localized: {
-            title: string;
-            description: string;
-        };
-
-        defaultAudioLanguage: string;
-    };
-
-    statistics: {
-        viewCount: string;
-        likeCount: string;
-        dislikeCount: string;
-        favoriteCount: string;
-        commentCount: string;
-    };
+    snippet: ContentSnippet;
+    statistics: ContentStatistics;
 }
-interface Thumbnail {
+interface ContentThumbnailSize {
     url: string;
     width: number;
     height: number;
+}
+
+interface ContentStatistics {
+    viewCount: string;
+    likeCount: string;
+    dislikeCount: string;
+    favoriteCount: string;
+    commentCount: string;
+}
+
+interface ContentThumbnail {
+    default: ContentThumbnailSize;
+    medium: ContentThumbnailSize;
+    high: ContentThumbnailSize;
+    standard: ContentThumbnailSize;
+    maxres: ContentThumbnailSize;
+}
+interface ContentLocalized {
+    title: string;
+    description: string;
+}
+interface ContentSnippet {
+    publishedAt: string;
+    channelId: string;
+    title: string;
+    description: string;
+    thumbnails: ContentThumbnail;
+    channelTitle: string;
+    tags: string[];
+    categoryId: string;
+    liveBroadcastContent: string;
+    defaultLanguage?: string;
+    localized: ContentLocalized;
+    defaultAudioLanguage: string;
 }

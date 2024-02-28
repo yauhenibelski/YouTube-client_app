@@ -11,7 +11,7 @@
 
             <button mat-raised-button>search</button>
 
-            <button mat-mini-fab color="basic" (click)="filterBlock.showBlock()">
+            <button mat-mini-fab color="basic" (click)="isShowFilterBlock = !isShowFilterBlock">
                 <mat-icon>tune</mat-icon>
             </button>
         </div>
@@ -22,4 +22,4 @@
     </div>
 </mat-toolbar>
 
-<app-filter-block #filterBlock></app-filter-block>
+<app-filter-block [@openClose]="isShowFilterBlock ? 'open' : 'closed'"></app-filter-block>

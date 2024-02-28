@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    QueryList,
-    ViewChildren,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, QueryList, ViewChildren } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,12 +19,7 @@ import { getDirection } from './utils/get-direction';
 export class FilterBlockComponent {
     @ViewChildren(MatIcon) private icons: QueryList<MatIcon> | null = null;
 
-    constructor(
-        private changeDetector: ChangeDetectorRef,
-        public filterService: FilterBlockService,
-    ) {}
-
-    isShowBlock = false;
+    constructor(public filterService: FilterBlockService) {}
 
     changeFilterValueByDirection(currentIcon: MatIcon, filterBy: Filter['value']): void {
         if (this.icons) {
@@ -57,10 +46,5 @@ export class FilterBlockComponent {
         this.filterService.options = {
             word: input.value,
         };
-    }
-
-    showBlock(): void {
-        this.isShowBlock = !this.isShowBlock;
-        this.changeDetector.markForCheck();
     }
 }

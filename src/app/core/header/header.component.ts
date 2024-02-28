@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FilterBlockComponent } from './filter-block/filter-block.component';
+import { openCloseFilterBlock } from './animations/open-closed.animation';
 
 @Component({
     selector: 'app-header',
@@ -22,5 +23,8 @@ import { FilterBlockComponent } from './filter-block/filter-block.component';
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    animations: [openCloseFilterBlock],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+    isShowFilterBlock = false;
+}

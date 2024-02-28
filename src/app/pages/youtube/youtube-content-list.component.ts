@@ -28,7 +28,7 @@ export class YoutubeContentListComponent implements OnInit {
         this.contentStoreService.loadContent();
     }
 
-    trackById(_: number, content: Content): Content['id'] {
+    trackById(_: number, content: Content): string {
         return content.id;
     }
 }

@@ -1,15 +1,12 @@
 :host {
     display: block;
+    overflow: hidden;
 }
 
 mat-toolbar {
     transition: 0.3s;
-    height: 0px;
+    height: 40px;
     overflow: hidden;
-}
-
-.active {
-    height: 30px;
 }
 
 .filter-wrap {
