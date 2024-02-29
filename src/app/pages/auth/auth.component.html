@@ -1,0 +1,41 @@
+<mat-card>
+    <h2>Login</h2>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+                type="email"
+                matInput
+                placeholder="Ex. pat@example.com"
+                [formControl]="emailFormControl"
+            />
+            <!-- @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+      }
+      @if (emailFormControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      } -->
+        </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input
+                type="password"
+                matInput
+                placeholder="********"
+                [formControl]="emailFormControl"
+            />
+            <!-- @if (emailFormControl.hasError('password') && !emailFormControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+      }
+      @if (emailFormControl.hasError('password')) {
+        <mat-error>Password is <strong>required</strong></mat-error>
+      } -->
+        </mat-form-field>
+    </form>
+
+    <mat-card-actions>
+        <button mat-stroked-button>Login</button>
+    </mat-card-actions>
+</mat-card>
