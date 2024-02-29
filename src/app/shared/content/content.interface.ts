@@ -11,7 +11,7 @@ interface ContentThumbnailSize {
     height: number;
 }
 
-interface ContentStatistics {
+export interface ContentStatistics {
     viewCount: string;
     likeCount: string;
     dislikeCount: string;

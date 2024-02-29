@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { Content } from '../../shared/content/content.interface';
 import { ContentStoreService } from '../../shared/content/content-store.service';
 import { FilterContentPipe } from './pipes/filter-content.pipe';

@@ -1,0 +1,13 @@
+<mat-card [appPaintBorderBottom]="content && content.snippet.publishedAt">
+    <img
+        mat-card-image
+        [src]="content?.snippet?.thumbnails?.medium?.url"
+        [alt]="content?.snippet?.title"
+    />
+
+    <app-statistics [statistics]="content && content.statistics"></app-statistics>
+
+    <mat-card-content>
+        {{ content?.snippet?.title }}
+    </mat-card-content>
+</mat-card>
