@@ -15,8 +15,7 @@ import { FilterBlockService } from '../../core/header/filter-block/services/filt
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class YoutubeContentListComponent implements OnInit {
-    readonly youTubeContent$ = this.contentStoreService.content$;
-
+    readonly youTubeContent$ = this.contentStoreService.contentList$;
     readonly filterValue$ = this.filterService.options$;
 
     constructor(

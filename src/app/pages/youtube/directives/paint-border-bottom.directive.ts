@@ -14,7 +14,7 @@ export class PaintBorderBottomDirective {
             : 'none';
 
         return {
-            'border-bottom': 'solid 5px',
+            'border-bottom': 'solid 3px',
             'border-bottom-color': color,
         };
     }

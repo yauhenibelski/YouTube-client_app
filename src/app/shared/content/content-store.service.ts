@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { Content } from './content.interface';
 import { ContentApiService } from './content-api.service';
 
@@ -7,17 +7,44 @@ import { ContentApiService } from './content-api.service';
     providedIn: 'root',
 })
 export class ContentStoreService {
-    private contentStore$ = new BehaviorSubject<Content[] | null>(null);
+    private readonly contentStore$ = new BehaviorSubject<Content[] | null>(null);
+    private readonly currentContentData$ = new BehaviorSubject<Content | null>(null);
 
-    constructor(private contentApi: ContentApiService) {}
+    private readonly contentApi = inject(ContentApiService);
 
-    get content$(): Observable<Content[] | null> {
-        return this.contentStore$.asObservable();
-    }
+    private activeLoadContentStoreSubscription: Subscription | null = null;
+    private activeLoadCurrentContentSubscription: Subscription | null = null;
+
+    readonly contentList$ = this.contentStore$.asObservable();
+    readonly currentContent$ = this.currentContentData$.asObservable();
 
     loadContent(): void {
-        this.contentApi.getContent().subscribe(content => {
-            this.contentStore$.next(content);
-        });
+        if (this.activeLoadContentStoreSubscription) {
+            this.activeLoadContentStoreSubscription.unsubscribe();
+        }
+
+        this.contentStore$.next(null);
+
+        this.activeLoadContentStoreSubscription = this.contentApi
+            .getContent()
+            .subscribe(content => {
+                this.contentStore$.next(content);
+            });
+    }
+
+    loadContentByID(id: string | null): void {
+        if (!id) return;
+
+        if (this.activeLoadCurrentContentSubscription) {
+            this.activeLoadCurrentContentSubscription.unsubscribe();
+        }
+
+        this.currentContentData$.next(null);
+
+        this.activeLoadCurrentContentSubscription = this.contentApi
+            .getContentByID(id)
+            .subscribe(content => {
+                this.currentContentData$.next(content);
+            });
     }
 }

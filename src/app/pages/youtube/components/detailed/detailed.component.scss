@@ -7,7 +7,7 @@
 
 mat-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
     align-items: center;
     justify-items: center;
     overflow: hidden;
@@ -22,10 +22,13 @@ mat-card {
     }
 }
 mat-card-content {
-    box-sizing: border-box;
-    height: 100%;
+    align-self: start;
     p {
         margin-top: 20px;
         word-break: break-word;
     }
+}
+
+mat-spinner {
+    margin: auto;
 }

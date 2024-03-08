@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { AuthService } from './services/auth.service';
 
 @Component({
     selector: 'app-auth',
@@ -22,4 +23,6 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class AuthComponent {
     emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+    constructor(public readonly authService: AuthService) {}
 }

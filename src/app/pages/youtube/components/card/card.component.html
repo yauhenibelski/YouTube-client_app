@@ -1,4 +1,7 @@
-<mat-card [appPaintBorderBottom]="content && content.snippet.publishedAt">
+<mat-card
+    [appPaintBorderBottom]="content && content.snippet.publishedAt"
+    [routerLink]="content?.id"
+>
     <img
         mat-card-image
         [src]="content?.snippet?.thumbnails?.medium?.url"

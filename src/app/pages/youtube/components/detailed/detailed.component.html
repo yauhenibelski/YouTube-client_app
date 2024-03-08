@@ -1,27 +1,25 @@
-<button mat-button>
-    <mat-icon>reply</mat-icon>
-</button>
-<mat-card class="example-card">
-    <div class="img-wrap">
-        <img alt="" [src]="content.snippet.thumbnails.maxres.url" />
-        <app-statistics [statistics]="content && content.statistics"></app-statistics>
-    </div>
+<ng-container *ngIf="content$ | async as content; else spinner">
+    <button mat-button routerLink="../">
+        <mat-icon>reply</mat-icon>
+    </button>
 
-    <mat-card-content [appPaintBorderBottom]="content.snippet.publishedAt">
-        <mat-card-header>
-            <mat-card-title>{{ content.snippet.title }}</mat-card-title>
-            <mat-card-subtitle>
-                {{
-                    data.toLocaleDateString(undefined, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        weekday: 'long'
-                    })
-                }}
-            </mat-card-subtitle>
-        </mat-card-header>
+    <mat-card [appPaintBorderBottom]="content.snippet.publishedAt">
+        <div class="img-wrap">
+            <img alt="" [src]="content.snippet.thumbnails.maxres.url" />
+            <app-statistics [statistics]="content && content.statistics"></app-statistics>
+        </div>
 
-        <p>{{ content.snippet.description }}</p>
-    </mat-card-content>
-</mat-card>
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>{{ content.snippet.title }}</mat-card-title>
+                <mat-card-subtitle>{{ getDate(content.snippet.publishedAt) }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <p>{{ content.snippet.description }}</p>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+
+<ng-template #spinner>
+    <mat-spinner></mat-spinner>
+</ng-template>

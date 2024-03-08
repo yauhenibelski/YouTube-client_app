@@ -7,8 +7,13 @@ import { Content } from './content.interface';
     providedIn: 'root',
 })
 export class ContentApiService {
-    // eslint-disable-next-line class-methods-use-this
     getContent(): Observable<Content[]> {
         return of(content);
+    }
+
+    getContentByID(ID: string): Observable<Content | null> {
+        const currentContent = content.find(({ id }) => id === ID);
+
+        return of(currentContent || null);
     }
 }
